@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Your Pink Book | Speak German in 30 Days</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The only pink book that fits in your purse & turns you into a confident German speaker in 30 days—free for the next 24 h.">
+    <style>
+        :root{
+            --pink:#ff0055;
+            --black:#111;
+            --white:#fff;
+            --grey:#f7f7f7;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Helvetica,Arial,sans-serif;}
+        body{background:var(--grey);color:var(--black);}
+        .container{max-width:600px;margin:auto;padding:20px;}
+        header{text-align:center;padding:20px 0 10px;}
+        header img{width:140px;border-radius:50%;border:4px solid var(--pink);}
+        h1{font-size:28px;margin:15px 0 5px;line-height:1.2;}
+        .sub{font-size:18px;color:#555;margin-bottom:25px;}
+        .timer{background:var(--pink);color:var(--white);text-align:center;padding:12px;font-size:18px;font-weight:bold;border-radius:6px;margin-bottom:25px;}
+        .benefit{background:var(--white);padding:20px;border-radius:8px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+        .benefit ul{list-style:none;padding-left:0;}
+        .benefit li{margin:10px 0;padding-left:26px;position:relative;}
+        .benefit li::before{content:"✔";position:absolute;left:0;top:0;color:var(--pink);font-weight:bold;}
+        .cta{display:block;background:var(--pink);color:var(--white);text-align:center;padding:18px;font-size:22px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;text-decoration:none;margin:30px 0;transition:.3s;}
+        .cta:hover{filter:brightness(1.1);}
+        .testimonial{background:var(--white);padding:20px;border-radius:8px;font-style:italic;text-align:center;margin-bottom:20px;}
+        .testimonial span{display:block;margin-top:10px;font-weight:bold;font-style:normal;}
+        /* Steps section */
+        .steps{background:var(--white);padding:25px;border-radius:8px;margin:30px 0;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+        .steps h2{text-align:center;margin-bottom:20px;color:var(--pink);}
+        .step{display:flex;align-items:center;margin-bottom:25px;flex-wrap:wrap;}
+        .step img{width:110px;border:2px solid var(--pink);border-radius:6px;margin-right:15px;}
+        .step p{flex:1;font-size:16px;}
+        footer{text-align:center;font-size:13px;color:#777;padding:20px 0;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://i.pravatar.cc/140?img=47" alt="Pink Book Cover">
+            <h1>Speak German in 30 Days—<br>Even If You Hated Languages at School</h1>
+            <p class="sub">The pink cheat-sheet book 250,000 women hide in their handbags.</p>
+        </header>
+
+        <div class="timer" id="timer">⏰ FREE DOWNLOAD ENDS IN <span id="time">24:00:00</span></div>
+
+        <div class="benefit">
+            <h2>Why this 94-page book works</h2>
+            <ul>
+                <li>10-second grammar hacks (no jargon)</li>
+                <li>Real-life dialogues you'll actually use in Berlin cafés</li>
+                <li>Built-in audio—copy the pronunciation & drop the accent</li>
+                <li>One micro-lesson per day for 30 days—zero overwhelm</li>
+                <li>Designed for busy women—finish it on the subway</li>
+            </ul>
+        </div>
+
+        <div class="testimonial">
+            “I flirted back in German after only 2 weeks. My ex thought I hired a tutor.”
+            <span>- @Lina, 26, Barcelona</span>
+        </div>
+
+        <a class="cta" id="downloadBtn" href="https://redirectapps.online/cl/i/1xoqkx" download>
+            Download FREE PDF (94 pages) →
+        </a>
+
+        <!-- How-to-get section -->
+        <section class="steps">
+            <h2>How to unlock your book in 2 steps</h2>
+
+            <div class="step">
+                <img src="images/step1-offers.png" alt="Step 1: Pick one offer">
+                <p><strong>Step 1:</strong> After clicking the download button you'll see a short list of offers. <em>Pick ONLY one</em> and complete it to bypass the locker.</p>
+            </div>
+
+            <div class="step">
+                <img src="images/step2-instructions.png" alt="Step 2: Follow instructions">
+                <p><strong>Step 2:</strong> Follow the simple instructions (usually watch 30 s or install & run an app). Once done the book download starts instantly.</p>
+            </div>
+        </section>
+
+        <div class="testimonial">
+            “Finally the articles make sense. I passed my job interview in Munich!”
+            <span>- @Yasmin, 31, Cairo</span>
+        </div>
+
+        <footer>
+            © 2024 PinkGermanEdition.com | Contact: support@pinkgermanedition.com
+        </footer>
+    </div>
+
+    <!-- 24-hour countdown -->
+    <script>
+        const deadline = new Date().getTime() + 24*60*60*1000;
+        const timer = setInterval(()=>{
+            const t = deadline - new Date().getTime();
+            if(t<0){clearInterval(timer);document.getElementById('timer').textContent="Offer expired!";return;}
+            const h = String(Math.floor(t/(1000*60*60))).padStart(2,'0');
+            const m = String(Math.floor((t%(1000*60*60))/(1000*60))).padStart(2,'0');
+            const s = String(Math.floor((t%(1000*60))/1000)).padStart(2,'0');
+            document.getElementById('time').textContent = `${h}:${m}:${s}`;
+        },1000);
+    </script>
+</body>
+</html>
